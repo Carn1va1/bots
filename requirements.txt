@@ -1,2 +1,2 @@
 discord.py==1.2.3
-datetime.py==4.3
+datetime==4.3
