@@ -1,14 +1,6 @@
-import random
-import asyncio
 import discord
-import os
-import re
-import time
 import datetime
-import youtube_dl
-import json
-from discord import Client
-from discord.ext import commands
+import os
 
 client = discord.Client()
 
@@ -94,4 +86,5 @@ async def on_message(message):
         embed.set_footer(text="세명컴퓨터고등학교")
         await message.channel.send(message.channel, embed=embed)
 
-client.run('NjIzNDQ0NTAyNDM4NDc3ODI4.XYZhIQ.BDphOBHBegRHEKMuFKL0GZKWWr0')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
