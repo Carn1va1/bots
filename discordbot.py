@@ -1,6 +1,5 @@
 import discord
 import datetime
-import os
 
 client = discord.Client()
 
@@ -25,23 +24,24 @@ async def on_message(message):
     if message.content.startswith("!test"):
         embed = discord.Embed(title="테스트", description="test!!!", color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="테스트 종료")
+        await message.channel.send(embed=embed)
 
     if message.content.startswith("!도움말"):
         embed = discord.Embed(title="도움말", description="```!도움말 \n!안녕 \n!젊은 \n!학교소개 \n!로고 \n!교가 \n!전경 \n!상징 \n!현재시간```"
                               , color=0x00ff00, timestamp=datetime.datetime.utcnow())
 
         embed.set_footer(text="세명컴퓨터고등학교")
-        await message.channel.send(message.channel, embed=embed)
+        await message.channel.send(embed=embed)
 
     if message.content.startswith("!안녕"):
         embed = discord.Embed(title="", description="<@{0}> 학생아 안녕".format(id), color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="세명컴퓨터고등학교")
-        await message.channel.send(message.channel, embed=embed)
+        await message.channel.send(embed=embed)
 
     if message.content.startswith("!젊은"):
         embed = discord.Embed(title="젊은", description="독수리", color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="완벽했다")
-        await message.channel.send(message.channel, embed=embed)
+        await message.channel.send(embed=embed)
 
     if message.content.startswith("!학교소개"):
         embed = discord.Embed(title="세명컴퓨터고등학교", description="교훈 : '성신예(誠信禮)를 바탕으로 애국(愛國)하는 사람이 되자. \n개교 : 1974년 4월 29일 \n유형 : 특성화고등학교"
@@ -52,19 +52,19 @@ async def on_message(message):
                                                              "\n공식블로그 : https://blog.naver.com/semyeongcom "
                                                              "\n카카오플러스친구 : https://pf.kakao.com/_pLaxcu", color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="세명컴퓨터고등학교")
-        await message.channel.send(message.channel, embed=embed)
+        await message.channel.send(embed=embed)
 
     if message.content.startswith("!로고"):
         embed = discord.Embed(title="세명컴퓨터고등학교 로고", description="", color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="세명컴퓨터고등학교")
         embed.set_image(url="http://image.classting.com/s3/images/classting/1494566837746084_320.jpg")
-        await message.channel.send(message.channel, embed=embed)
+        await message.channel.send(embed=embed)
 
     if message.content.startswith("!교가"):
         embed = discord.Embed(title="세명컴퓨터고등학교 교가", description="", color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="세명컴퓨터고등학교")
         embed.set_image(url="http://www.smc.hs.kr/crosseditor/binary/images/2018/02/06/20180206153122552_HJUUUIUO.jpg")
-        await message.channel.send(message.channel, embed=embed)
+        await message.channel.send(embed=embed)
 
     if message.content.startswith("!전경"):
         embed = discord.Embed(title="세명컴퓨터고등학교 전경", description="~~이건 어느 학교지?~~", color=0x00ff00, timestamp=datetime.datetime.utcnow())
@@ -72,18 +72,18 @@ async def on_message(message):
         embed.set_image(url="https://ww.namu.la/s/fc55f54c7b378f50f2e5cf702712a73f192a60f84ebe364e666d9be4049f6222c52a334"
                             "4e6aea9ec81c512fdb92d44670ed6d60d90f62b425e0fca95420c93e96fb042eea488c757ff60ff17fe7df6b8b5e"
                             "55c6d9460f8a3c837d0fa2b5f9155")
-        await message.channel.send(message.channel, embed=embed)
+        await message.channel.send(embed=embed)
 
     if message.content.startswith("!상징"):
         embed = discord.Embed(title="세명컴퓨터고등학교 상징", description="~~나도 몰랐다~~", color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="세명컴퓨터고등학교")
         embed.set_image(url="http://www.smc.hs.kr/crosseditor/binary/images/2016/10/27/20161027180416506_Y00G69TZ.png")
-        await message.channel.send(message.channel, embed=embed)
+        await message.channel.send(embed=embed)
 
     if message.content.startswith("!현재시간"):
         embed = discord.Embed(title="현재시간은  ", description="{0}".format(datetime.datetime.utcnow()) + "입니다", color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="세명컴퓨터고등학교")
-        await message.channel.send(message.channel, embed=embed)
+        await message.channel.send(embed=embed)
 
-access_token = os.environ["BOT_TOKEN"]
-client.run(access_token)
+client.run('NjIzNDQ0NTAyNDM4NDc3ODI4.XYZx4Q.mGBvtX3t2lDSKtwIpQZSV8SStSE')
+v
