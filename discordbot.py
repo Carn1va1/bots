@@ -25,7 +25,6 @@ async def on_message(message):
     if message.content.startswith("!test"):
         embed = discord.Embed(title="테스트", description="test!!!", color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="테스트 종료")
-        await message.channel.send(message.channel, embed=embed)
 
     if message.content.startswith("!도움말"):
         embed = discord.Embed(title="도움말", description="```!도움말 \n!안녕 \n!젊은 \n!학교소개 \n!로고 \n!교가 \n!전경 \n!상징 \n!현재시간```"
