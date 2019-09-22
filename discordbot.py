@@ -1,5 +1,6 @@
 import discord
 import datetime
+import os
 
 client = discord.Client()
 
@@ -85,5 +86,6 @@ async def on_message(message):
         embed.set_footer(text="세명컴퓨터고등학교")
         await message.channel.send(embed=embed)
 
-client.run('NjIzNDQ0NTAyNDM4NDc3ODI4.XYZx4Q.mGBvtX3t2lDSKtwIpQZSV8SStSE')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
 v
