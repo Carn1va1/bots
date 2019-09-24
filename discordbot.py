@@ -28,7 +28,7 @@ async def on_message(message):
         await message.channel.send(embed=embed)
 
     if message.content.startswith("!도움말"):
-        embed = discord.Embed(title="도움말", description="```!도움말 \n!안녕 \n!젊은 \n!학교소개 \n!로고 \n!교가 \n!전경 \n!상징 \n!현재시간```"
+        embed = discord.Embed(title="도움말", description="```!도움말 \n!안녕 \n!학교소개 \n!로고 \n!교가 \n!전경 \n!상징 \n!현재시간```"
                               , color=0x00ff00, timestamp=datetime.datetime.utcnow())
 
         embed.set_footer(text="세명컴퓨터고등학교")
