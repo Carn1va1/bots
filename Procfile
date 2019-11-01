@@ -1,2 +1,1 @@
-- worker: python discordbot.py
-+ web: python commuteBot.py
+worker: python discordbot.py + python commuteBot.py
