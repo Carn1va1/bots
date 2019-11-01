@@ -1,2 +1,1 @@
-worker: python discordbot.py
-worker: python commuteBot.py
+worker: python discordbot.py, commuteBot.py
