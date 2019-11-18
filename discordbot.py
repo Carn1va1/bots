@@ -85,7 +85,17 @@ async def on_message(message):
         embed = discord.Embed(title="현재시간은  ", description="{0}".format(datetime.datetime.utcnow()) + "입니다", color=0x00ff00, timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="세명컴퓨터고등학교")
         await message.channel.send(embed=embed)
+        
+    if message.content.startswith("!등교"):
+        embed = discord.Embed(title="등교", description="닉네임 : <@{0}>".format(id), color=0x00ff00, timestamp=datetime.datetime.utcnow())
+        embed.set_footer(text=" <@{0}>".format(id))
+        await message.channel.send(embed=embed)
+    if message.content.startswith("!하교"):
+        embed = discord.Embed(title="하교", description="닉네임 : <@{0}>".format(id), color=0xff0000, timestamp=datetime.datetime.utcnow())
+        embed.set_footer(text="하교 시간 ")
+        await message.channel.send(embed=embed)
 
+        
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
 v
