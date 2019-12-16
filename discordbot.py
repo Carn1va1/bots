@@ -13,7 +13,8 @@ async def on_ready():
     game = discord.Game("!도움말")
     await client.change_presence(status=discord.Status.online, activity=game)
 
-
+'''
+오류로 인해 잠시 보류
 @client.event
 async def on_raw_reaction_add(payload):
     message_id = payload.message_id
@@ -62,7 +63,7 @@ async def on_raw_reaction_remove(payload):
                 print("유저를 찾을 수 없습니다.")
         else:
             print("역할을 찾을 수 없습니다.")
-
+'''
 
 @client.event
 async def on_message(message):
