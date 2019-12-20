@@ -157,7 +157,7 @@ async def on_message(message):
     if message.content.startswith("!등교"):
         embed = discord.Embed(title="등교", description="닉네임 : <@{0}>".format(id), color=0x00ff00,
                               timestamp=datetime.datetime.utcnow())
-        embed.set_footer(text=" <@{0}>".format(id))
+        embed.set_footer(text="등교 시간 ")
         await message.channel.send(embed=embed)
     if message.content.startswith("!하교"):
         embed = discord.Embed(title="하교", description="닉네임 : <@{0}>".format(id), color=0xff0000,
