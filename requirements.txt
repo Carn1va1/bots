@@ -1,2 +1,5 @@
-discord.py==1.2.3
+asyncio==3.4.3
 datetime==4.3
+discord.py==1.2.3
+openpyxl==3.0.2
+youtube-dl==2019.11.28
