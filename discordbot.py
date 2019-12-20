@@ -1,8 +1,11 @@
 import discord
 import datetime
 import os
+import youtube_dl
+from discord.ext import commands
 
-client = discord.Client()
+client = commands.Bot(command_prefix='!')
+
 
 @client.event
 async def on_ready():
@@ -14,21 +17,20 @@ async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=game)
 
 '''
-오류로 인해 잠시 보류
+오류 해결 중..(아시는 분은 디스코드 Carn1val#6974로 부탁드릴게요.)
+
 @client.event
 async def on_raw_reaction_add(payload):
     message_id = payload.message_id
     if message_id == 656053252277796864:
         guild_id = payload.guild_id
         guild = discord.utils.find(lambda g : g.id == guild_id, client.guilds)
-
         if payload.emoji.name == 'one':
             role = discord.utils.get(guild.roles, name='1학년')
         elif payload.emoji.name == 'two':
             role = discord.utils.get(guild.roles, name='2학년')
         else:
             role = discord.utils.get(guild.roles, name=payload.emoji.name)
-
         if role is not None:
             member = discord.utils.find(lambda m : m.id == payload.user_id, guild.members)
             if member is not None:
@@ -38,22 +40,18 @@ async def on_raw_reaction_add(payload):
                 print("유저를 찾을 수 없습니다.")
         else:
             print("역할을 찾을 수 없습니다.")
-
-
 @client.event
 async def on_raw_reaction_remove(payload):
     message_id = payload.message_id
     if message_id == 656053252277796864:
         guild_id = payload.guild_id
         guild = discord.utils.find(lambda g: g.id == guild_id, client.guilds)
-
         if payload.emoji.name == 'one':
             role = discord.utils.get(guild.roles, name='1학년')
         elif payload.emoji.name == 'two':
             role = discord.utils.get(guild.roles, name='2학년')
         else:
             role = discord.utils.get(guild.roles, name=payload.emoji.name)
-
         if role is not None:
             member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
             if member is not None:
@@ -64,6 +62,13 @@ async def on_raw_reaction_remove(payload):
         else:
             print("역할을 찾을 수 없습니다.")
 '''
+
+
+@client.event
+async def on_reaction_add(reaction, user):
+    if str(reaction.emoji) == ":lock:":
+        await reaction.message.channel.send(user + "보안과에 대해 설명하겠습니다. ```스마트보안솔루션과 \n 교육목표 : 프로그램 및 정보통신에 대한 기본적인 지식을 바탕으로 정보보호에 대한 개방적 문제를 해결할 수 있는 창의적이고 능동적인 능력을 갖추어서, 해킹이나 바이러스 등의 보안 위협에 능동적으로 대처할 수 있는 인력을 양성합니다.```")
+
 
 @client.event
 async def on_message(message):
@@ -130,7 +135,7 @@ async def on_message(message):
                               timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="세명컴퓨터고등학교")
         embed.set_image(
-            url="http://smc.sen.hs.kr/crosseditor/binary/images/2016/10/28/20161028085614308_4T2IYFHF.jpg")
+            url="https://ww.namu.la/s/fc55f54c7b378f50f2e5cf702712a73f192a60f84ebe364e666d9be4049f6222c52a3344e6aea9ec81c512fdb92d44670ed6d60d90f62b425e0fca95420c93e999334ce86a02e0fce41ab5488ed8bae495f9510e3f57a2c9b83b1bb5128d9c08")
         await message.channel.send(embed=embed)
 
     if message.content.startswith("!상징"):
@@ -160,7 +165,12 @@ async def on_message(message):
         embed.set_footer(text="하교 시간 ")
         await message.channel.send(embed=embed)
 
-        
+    if message.content.startswith("!학과소개"):
+        embed = discord.Embed(title="세명컴퓨터고등학교 학과소개", description="아래에 이모지를 추가하면 학과소개를 합니다. \n 🔒 : 보안과 \n 📱 : 디바이스과 \n 🤖 : 인공지능과 \n 🎮 : 게임과", color=0x00ff00,
+                              timestamp=datetime.datetime.utcnow())
+        embed.set_footer(text="세명컴퓨터고등학교")
+        await message.channel.send(embed=embed)
+
+
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
-v
