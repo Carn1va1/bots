@@ -130,9 +130,7 @@ async def on_message(message):
                               timestamp=datetime.datetime.utcnow())
         embed.set_footer(text="세명컴퓨터고등학교")
         embed.set_image(
-            url="https://ww.namu.la/s/fc55f54c7b378f50f2e5cf702712a73f192a60f84ebe364e666d9be4049f6222c52a334"
-                "4e6aea9ec81c512fdb92d44670ed6d60d90f62b425e0fca95420c93e96fb042eea488c757ff60ff17fe7df6b8b5e"
-                "55c6d9460f8a3c837d0fa2b5f9155")
+            url="http://smc.sen.hs.kr/crosseditor/binary/images/2016/10/28/20161028085614308_4T2IYFHF.jpg")
         await message.channel.send(embed=embed)
 
     if message.content.startswith("!상징"):
