@@ -3,3 +3,6 @@ datetime
 discord.py
 openpyxl
 youtube-dl
+BeautifulSoup
+re
+requests
