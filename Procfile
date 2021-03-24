@@ -1,1 +1,1 @@
-worker: python discordbot.py
+worker: python smc_bot.py
